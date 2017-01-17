@@ -27,7 +27,7 @@ public class KTX {
 	//txtGoHour 시작하는 시간 150000 
 	//txtGoAbrdDt 시작날짜
 	//내려 가는 편
-	static String fullUrl2 = "http://www.letskorail.com/ebizprd/EbizPrdTicketPr21111_i1.do?&txtGoAbrdDt=20170127&txtGoYoil=%EA%B8%88&txtGoStartCode=0001&txtGoStart=%EC%84%9C%EC%9A%B8&txtGoEndCode=0059&txtGoEnd=%EB%A7%88%EC%82%B0&selGoTrain=00&selGoRoom=&selGoRoom1=&txtGoHour=000000&txtGoTrnNo=&useSeatFlg=&useServiceFlg=&selGoSeat=&selGoService=&txtGoPage=1&txtPnrNo=&hidRsvChgNo=&hidStlFlg=&radJobId=1&SeandYo=&hidRsvTpCd=03&txtGoHour_first=&selGoSeat1=015&selGoSeat2=&txtPsgCnt1=1&txtPsgCnt2=0&txtMenuId=11&txtPsgFlg_1=1&txtPsgFlg_2=0&txtPsgFlg_3=0&txtPsgFlg_4=0&txtPsgFlg_5=0&chkCpn=N&txtSeatAttCd_4=015&txtSeatAttCd_3=00&txtSeatAttCd_2=000&txtGoStartCode2=&txtGoEndCode2=&hidDiscount=&hidEasyTalk=";
+	static String fullUrl2 = "http://www.letskorail.com/ebizprd/EbizPrdTicketPr21111_i1.do?&txtGoAbrdDt=20170127&txtGoYoil=%EA%B8%88&txtGoStartCode=0001&txtGoStart=%EC%84%9C%EC%9A%B8&txtGoEndCode=0059&txtGoEnd=%EB%A7%88%EC%82%B0&selGoTrain=00&selGoRoom=&selGoRoom1=&txtGoHour=110000&txtGoTrnNo=&useSeatFlg=&useServiceFlg=&selGoSeat=&selGoService=&txtGoPage=1&txtPnrNo=&hidRsvChgNo=&hidStlFlg=&radJobId=1&SeandYo=&hidRsvTpCd=03&txtGoHour_first=&selGoSeat1=015&selGoSeat2=&txtPsgCnt1=1&txtPsgCnt2=0&txtMenuId=11&txtPsgFlg_1=1&txtPsgFlg_2=0&txtPsgFlg_3=0&txtPsgFlg_4=0&txtPsgFlg_5=0&chkCpn=N&txtSeatAttCd_4=015&txtSeatAttCd_3=00&txtSeatAttCd_2=000&txtGoStartCode2=&txtGoEndCode2=&hidDiscount=&hidEasyTalk=";
 	
 	//돌아 오는 편
 	static String fullUrl3 = "http://www.letskorail.com/ebizprd/EbizPrdTicketPr21111_i1.do?&txtGoAbrdDt=20170130&txtGoYoil=%ED%99%94&txtGoStartCode=0059&txtGoStart=%EB%A7%88%EC%82%B0&txtGoEndCode=0001&txtGoEnd=%EC%84%9C%EC%9A%B8&selGoTrain=00&selGoRoom=&selGoRoom1=&txtGoHour=120000&txtGoTrnNo=&useSeatFlg=&useServiceFlg=&selGoSeat=&selGoService=&txtGoPage=1&txtPnrNo=&hidRsvChgNo=&hidStlFlg=&radJobId=1&SeandYo=&hidRsvTpCd=03&txtGoHour_first=&selGoSeat1=015&selGoSeat2=&txtPsgCnt1=1&txtPsgCnt2=0&txtMenuId=11&txtPsgFlg_1=1&txtPsgFlg_2=0&txtPsgFlg_3=0&txtPsgFlg_4=0&txtPsgFlg_5=0&chkCpn=N&txtSeatAttCd_4=015&txtSeatAttCd_3=000&txtSeatAttCd_2=000&txtGoStartCode2=&txtGoEndCode2=&hidDiscount=&hidEasyTalk=";
@@ -84,7 +84,7 @@ public class KTX {
 		//td:eq(4) 특실 
 		//td:eq(5) 일반석
 
-		for(int i=0;i<6;i++){
+		for(int i=0;i<3;i++){
 			Element tr = trs.get(i);
 			String alt = tr.select("td:eq(5)").select("img").attr("alt");
 			if (!"좌석매진".equals(alt)) {
@@ -130,12 +130,12 @@ public class KTX {
 		 // 메일 관련 정보
         String host = "smtp.gmail.com";
         //구글 계정
-        String username = "###";
+        String username = "####";
         //구글 패스워드
-        String password = "###";
+        String password = "####";
          
         //수신 메일 
-        String recipient = "###";
+        String recipient = "####";
          
         //properties 설정
         Properties props = new Properties();
