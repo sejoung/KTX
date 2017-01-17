@@ -50,7 +50,7 @@ public class KTX {
 				if("Y".equals(ktxflag1)&&"Y".equals(ktxflag2)){
 					text ="Y";
 				}
-				System.out.println(System.currentTimeMillis()+" 실행중 ");
+				
 				// 1분간격
 				if("N".equals(text)){
 					Thread.sleep(60000);
@@ -101,16 +101,20 @@ public class KTX {
 			}
 		}
 		*/
-		if(sb.toString().length()>0){
-			sb.append(url);
-			String mailtext = "ktx 마산행 열차";
-			if(fullUrl3.equals(url)){
-				 mailtext = "ktx 서울행 열차";
-			}
-			sendMail(sb.toString(),mailtext);
-			return "Y";
+		StringBuffer sb2 = new StringBuffer();
+		sb2.append("ktx 마산행 열차");
+		if(fullUrl3.equals(url)){
+			sb2.setLength(0);
+			sb2.append("ktx 서울행 열차");
 		}
 		
+		if(sb.toString().length()>0){
+			sb.append(url);
+			
+			sendMail(sb.toString(),sb2.toString());
+			return "Y";
+		}
+		System.out.println(System.currentTimeMillis()+" 실행중 "+sb2.toString());
 		return "N";
 	}
 
@@ -130,12 +134,12 @@ public class KTX {
 		 // 메일 관련 정보
         String host = "smtp.gmail.com";
         //구글 계정
-        String username = "####";
+        String username = "###";
         //구글 패스워드
         String password = "####";
          
         //수신 메일 
-        String recipient = "####";
+        String recipient = "###";
          
         //properties 설정
         Properties props = new Properties();
